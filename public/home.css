@@ -1,0 +1,71 @@
+/* Full-screen gradient background */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff6ec7, #6f9eff);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+/* Center container card */
+.container {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 30px;
+    border-radius: 15px;
+    width: 350px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Title */
+h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Labels */
+label {
+    display: block;
+    text-align: left;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Dropdowns */
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    margin-top: 5px;
+    background: rgba(255, 255, 255, 0.7);
+    font-size: 15px;
+}
+
+/* Button */
+button {
+    margin-top: 25px;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #ff4ac0, #5f7bff);
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+/* Hover effect */
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}

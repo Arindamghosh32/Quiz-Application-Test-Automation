@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" href="/result.css">
+</head>
+
+<body>
+
+<div class="result-container">
+
+    <h1>Your Score</h1>
+
+    <div class="score-box">
+        <h2><%= score*50 %></h2>
+    </div>
+
+    <div class="chart-wrapper">
+        
+        <canvas id="chart"></canvas>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+const score = Number("<%= score %>");
+
+const remaining = 2 - score;
+
+const ctx = document.getElementById('chart').getContext('2d');
+
+new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ["Score", "Remaining"],
+        datasets: [{
+            data: [score, remaining],
+            backgroundColor: ["#4CAF50", "#FF6347"], 
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: "bottom",
+                labels: {
+            color: "white"  
+        }
+            }
+        }
+    }
+});
+</script>
+
+</body>
+</html>

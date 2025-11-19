@@ -1,0 +1,37 @@
+{
+  "report_info": {
+    "generated_on": "2025-11-20 01:24:15",
+    "total_tests": 3,
+    "passed_tests": 3,
+    "failed_tests": 0
+  },
+  "test_cases": [
+    {
+      "category": "math",
+      "difficulty": "easy",
+      "start_time": "2025-11-20 01:22:38",
+      "status": "PASSED",
+      "score": "50",
+      "error": null,
+      "end_time": "2025-11-20 01:23:10"
+    },
+    {
+      "category": "gk",
+      "difficulty": "medium",
+      "start_time": "2025-11-20 01:23:10",
+      "status": "PASSED",
+      "score": "100",
+      "error": null,
+      "end_time": "2025-11-20 01:23:42"
+    },
+    {
+      "category": "math",
+      "difficulty": "hard",
+      "start_time": "2025-11-20 01:23:42",
+      "status": "PASSED",
+      "score": "50",
+      "error": null,
+      "end_time": "2025-11-20 01:24:15"
+    }
+  ]
+}

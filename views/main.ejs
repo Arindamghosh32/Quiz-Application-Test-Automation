@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz Home</title>
+  <link rel="stylesheet" href="/home.css">
+</head>
+<body>
+  <div class="container">
+
+    <h1>Dynamic Quiz App</h1>
+
+    <!-- Category Selection -->
+    <label>Choose Category</label>
+    <select id="category">
+      <option value="math">Math</option>
+      <option value="gk">General Knowledge</option>
+      <option value="science">Science</option>
+    </select>
+
+    <!-- Difficulty -->
+    <label>Difficulty</label>
+    <select id="difficulty">
+      <option value="easy">Easy</option>
+      <option value="medium">Medium</option>
+      <option value="hard">Hard</option>
+    </select>
+
+    <button onclick="startQuiz()">Start Quiz</button>
+  </div>
+
+  <script>
+    function startQuiz() {
+      const category = document.getElementById("category").value;
+      const level = document.getElementById("difficulty").value;
+
+      // YOU MUST REWRITE THIS COMMENT/SECTION
+      // (Write your own sentence that sets query params)
+      window.location.href = `/quiz?cat=${category}&level=${level}`;
+    }
+  </script>
+
+</body>
+</html>

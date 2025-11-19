@@ -1,0 +1,76 @@
+/* Background gradient */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #ff7ac6, #6ca9ff);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header (category + difficulty text) */
+h2 {
+    margin-top: 30px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(6px);
+    border-radius: 10px;
+    color: white;
+    font-size: 22px;
+}
+
+/* Question box styling */
+#question-box {
+    margin-top: 40px;
+    padding: 25px;
+    width: 70%;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    color: white;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+/* Timer box */
+#timer {
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 12px 25px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+/* Buttons */
+#nextBtn {
+    margin-top: 40px;
+    padding: 12px 35px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: white;
+    color: #444;
+    transition: 0.2s ease-in;
+}
+
+#nextBtn:hover {
+    background-color: #ffe4ff;
+}
+
+/* Style radio buttons + labels */
+label {
+    display: block;
+    margin: 8px 0;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+label:hover {
+    background: rgba(255, 255, 255, 0.2);
+}

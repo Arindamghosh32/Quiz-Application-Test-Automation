@@ -1,0 +1,44 @@
+/* Full gradient background */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #ff5f9e, #6c63ff);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Center card */
+.result-container {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 30px 50px;
+    border-radius: 15px;
+    backdrop-filter: blur(12px);
+    text-align: center;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+}
+
+/* Score styling */
+.score-box h2 {
+    font-size: 40px;
+    margin: 20px 0;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* Chart container */
+.chart-wrapper {
+    margin-top: 20px;
+    width: 300px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* If chart needs resizing manually */
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+}

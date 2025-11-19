@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+    <link rel="stylesheet" href="/quiz.css">
+</head>
+
+<body>
+
+<h2>Category: <%= category %> | Difficulty: <%= difficulty %></h2>
+
+<div id="question-box"></div>
+
+<div id="timer">10</div>
+
+<button id="nextBtn">Next</button>
+
+<script>
+    const category = "<%= category %>";
+    const difficulty = "<%= difficulty %>";
+
+    
+    const questions = {
+        math: {
+            easy: [
+                { q: "2 + 2 = ?", options: ["3","4","5","6"], correct: 1 },
+                { q: "5 - 1 = ?", options: ["4","3","6","2"], correct: 0 }
+            ],
+            medium: [
+                { q: "2 * 2 = ?", options: ["3","4","5","6"], correct: 1 }, 
+                { q: "15 / 3 = ?", options: ["2","3","4","5"], correct: 3 }
+            ],
+            hard: [
+                { q: "2 % 2 = ?", options: ["0","4","5","6"], correct: 0 },
+                { q: "2 % 2 + 1 = ?", options: ["1","0","5","6"], correct: 1 }
+            ]
+        },
+
+        gk: {
+            easy: [
+                { q: "Best University in the world?", options: ["MIT","Harvard","Stanford","Parul"], correct: 3 },
+                { q: "Best Student?", options: ["Arindam","Bill","Elon","Albert"], correct: 0 }
+            ],
+            medium: [
+                { q: "National Sport of India?", options: ["Hockey","Cricket","Football","Badminton"], correct: 0 },
+                { q: "Chief Minister of Assam?", options: ["Hemanta Biswa Sharma","Modi","Christiano","Albert"], correct: 0 }
+            ],
+            hard: [
+                { q: "National Fruit of India?", options: ["Mango","Coconut","Apple","Grapes"], correct: 0 },
+                { q: "Chief Minister of Bengal?", options: ["Mamta Banerjee","Modi","Christiano","Albert"], correct: 0 }
+            ]
+        }
+    };
+
+    let quiz = questions[category][difficulty];
+
+    let index = 0;
+    let score = 0;
+
+    let timer;
+    let timeLeft = 10;
+
+    function startTimer() {
+        timeLeft = 10;
+        timer = setInterval(() => {
+            document.getElementById("timer").innerText = timeLeft;
+            timeLeft--;
+
+            if (timeLeft < 0) {
+                clearInterval(timer);
+                nextQuestion();
+            }
+        }, 1000);
+    }
+
+    function loadQuestion() {
+        clearInterval(timer);
+        startTimer();
+
+        if (index >= quiz.length) {
+            return finishQuiz();
+        }
+
+        let q = quiz[index];
+
+        let html = `<h3>${q.q}</h3>`;
+
+        q.options.forEach((opt, i) => {
+            html += `
+                <label>
+                    <input type="radio" name="answer" value="${i}"> ${opt}
+                </label><br>
+            `;
+        });
+
+        document.getElementById("question-box").innerHTML = html;
+    }
+
+    function nextQuestion() {
+        let selected = document.querySelector("input[name='answer']:checked");
+
+        
+        if (selected !== null) {
+            let ans = parseInt(selected.value);
+            if (ans === quiz[index].correct) {
+                score++;
+            }
+        }
+
+        index++;
+        loadQuestion();
+    }
+
+    document.getElementById("nextBtn").addEventListener("click", nextQuestion);
+
+    function finishQuiz() {
+        window.location.href = "/result?score=" + score;
+    }
+
+    loadQuestion();
+</script>
+
+</body>
+</html>
